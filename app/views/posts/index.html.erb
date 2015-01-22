@@ -1,5 +1,32 @@
 <h1>Listing posts</h1>
 
+<hr/>
+<% @posts.each do |post| %>
+
+<b><%= post.title %></b>
+<br/>
+<i>
+  Created by <%= post.user.email %>, 
+    <%= post.created_at.strftime("%d %b. %Y") %>
+     or 
+    <%= post.created_at.strftime("%H:%M") %>
+</i>
+<br/>
+<%= post.body %>
+<br/>
+<%= link_to 'Show', post %>
+
+<% if post.user==current_user %>
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<hr/>
+<% end %>
+
+<hr/>
+<h1>
+  THE TABLE
+</h1>
 <table>
   <thead>
     <tr>
@@ -29,5 +56,6 @@
 </table>
 
 <br>
-
+<hr />
 <%= link_to 'New Post', new_post_path %>
+<hr />
