@@ -25,7 +25,7 @@
 <% end %>
 
 
-<%= will_paginate @posts %>
+<%= will_paginate @posts, previous_label: "Older", next_label: "Newer", inner_window: 1, outer_window: 0 %>
 
 <hr/>
 <h1>
