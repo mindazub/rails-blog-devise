@@ -1,7 +1,9 @@
 input[type="submit"] {
   @include button;
 }
-
+p{
+	background: red;
+}
 div#main {
   @include grid-row;
 }
@@ -14,4 +16,6 @@ footer {
   p {
     line-height: 100px;
   }
+
+
 }

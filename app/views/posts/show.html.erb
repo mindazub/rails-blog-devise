@@ -17,8 +17,9 @@
 <%= link_to 'Back', posts_path %>
 
 <h2>Comments</h2>
+<h4><%= @post.comments.count %></h4>
  <div id="comments">
-  <%= render partial: @post.comments %>
+  <%= render partial: @post.comments.reverse %>
 </div>
 
 <%= form_for [@post, Comment.new] do |f| %>

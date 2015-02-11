@@ -3,14 +3,15 @@
 <hr/>
 <% @posts.each do |post| %>
 
-<b><%= post.title %></b>
-<br/>
+<h1><b><%= post.title %></b></h1>
+
 <i>
   Created by <%= post.user.email %>, 
     <%= post.created_at.strftime("%d %b. %Y") %>
      or 
     <%= post.created_at.strftime("%H:%M") %>
 </i>
+<h5><b>Comments:&nbsp&nbsp <%= post.comments.count %></b></h5>
 <br/>
 <%= post.body %>
 <br/>
@@ -22,6 +23,9 @@
 <% end %>
 <hr/>
 <% end %>
+
+
+<%= will_paginate @posts %>
 
 <hr/>
 <h1>

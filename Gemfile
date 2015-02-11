@@ -41,3 +41,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'devise', '~> 3.4.1'
 
 gem 'foundation-rails'
+
+gem "will_paginate", "~> 3.0.7" 
